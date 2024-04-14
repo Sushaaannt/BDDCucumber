@@ -32,14 +32,13 @@ public class JsonHandler {
 		return instance;
 	}
 	
-	public static JsonNode loadInJsonformat() throws Throwable {
+	public static void loadInJsonformat() throws Throwable {
 		try {
 			System.out.println("user switches to page : pages/"+page+".json" );
 			mapper = new ObjectMapper();
 			File file = new File("src/main/resources/pages/"+page+".json");
 			rootPage = mapper.readTree(file);
-			return rootPage;
-			
+
 		} catch (Exception e) {
 			throw new Exception("Error :  " + e.getMessage());
 		}

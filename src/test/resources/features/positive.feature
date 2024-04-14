@@ -4,7 +4,7 @@ Feature: Title of your feature
   Scenario: Sample Scenario
     #Given user calls business component "sampleMethod" from location "page1"
     And user switches to page "sample"
-    Given user calls business component "launchScript" from location "page1"
+    Given user calls business component "sampleMethod" from location "page1"
     
     
     
