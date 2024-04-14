@@ -1,10 +1,6 @@
 package generic;
 
 import java.io.File;
-
-import javax.imageio.stream.FileImageInputStream;
-
-import io.cucumber.core.internal.com.fasterxml.jackson.core.JsonParser;
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.JsonNode;
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -15,7 +11,7 @@ public class JsonHandler {
 	public static String locator = null;
 	public static String value = null;
 	public static String type = null;
-	public static boolean flag, flafParseJsonData, flaggetJsonNode;
+	public static boolean flag, flagParseJsonData, flagGetJsonNode;
 	public static JsonHandler instance = null;
 	public static ObjectMapper mapper = null ;
 
@@ -29,8 +25,8 @@ public class JsonHandler {
 
 	public static JsonHandler getInstance() {
 		flag = false;
-		flafParseJsonData = false;
-		flaggetJsonNode = false;
+		flagParseJsonData = false;
+		flagGetJsonNode = false;
 		if (instance == null)
 			instance = new JsonHandler();
 		return instance;
@@ -64,13 +60,13 @@ public class JsonHandler {
 				} else {
 					switch (attribute.toLowerCase()) {
 
-					case "loactor":
+					case "locator":
 						locator = crrWebElementObject.path("locator").asText();
 						return locator;
 
 					case "value":
 						value = crrWebElementObject.path("value").asText();
-						return locator;
+						return value;
 
 					case "type":
 						type = crrWebElementObject.path("type").asText();

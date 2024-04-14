@@ -17,7 +17,8 @@ public class mainClass {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.google.com/");
 		element= WebElementHandler.getElement("search");
-		element.sendKeys("abc");
+        assert element != null;
+        element.sendKeys("abc");
 		
 	}
 
