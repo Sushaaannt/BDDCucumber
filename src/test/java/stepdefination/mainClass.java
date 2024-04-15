@@ -18,7 +18,7 @@ public class mainClass {
 		driver.get("https://www.google.com/");
 		element= WebElementHandler.getElement("search");
         assert element != null;
-        element.sendKeys("abc");
+        element.sendKeys("abcd");
 		
 	}
 
