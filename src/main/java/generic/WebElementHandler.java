@@ -90,18 +90,18 @@ public class WebElementHandler {
     }
 
     public static boolean IsFramePresent() {
-        String frameType = null;
-        if (driver.findElements(By.tagName("iframe")).size() > 0) {
+        String frameType;
+        if (!driver.findElements(By.tagName("iframe")).isEmpty()) {
             frameType = "iframe";
         } else {
             frameType = "frame";
         }
         List<WebElement> frames = driver.findElements(By.tagName(frameType));
         System.out.println("NoOfFramesPresent:" + frames.size());
-        return frames.size() > 0;
+        return !frames.isEmpty();
     }
 
-    public static WebElement searchElement(By by, boolean isCheckingForFrames) throws Throwable {
+    public static WebElement searchElement(By by, boolean isCheckingForFrames) {
         List<WebElement> frames;
         if (isElementPresent(by)) {
             return getElementWhenDisplayed(by);
@@ -113,7 +113,7 @@ public class WebElementHandler {
                 }
             }
             frames = getAllFrames();
-            if (frames.size() > 0) {
+            if (!frames.isEmpty()) {
                 for (WebElement parentFrame : frames) {
                     driver.switchTo().frame(parentFrame);
                     if (isElementPresent(by)) {
