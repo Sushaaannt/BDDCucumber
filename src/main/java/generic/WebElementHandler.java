@@ -22,6 +22,9 @@ public class WebElementHandler {
         assert element != null;
         element.sendKeys("abc");
     }
+    public static void close_browser() {
+        driver.close();
+    }
 
     public static WebElement getElement(String identifier) throws Throwable {
         WebElement element;
