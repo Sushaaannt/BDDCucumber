@@ -1,12 +1,14 @@
 Feature: Title of your feature
 
-    @tag
+  @tag1
   Scenario: Sample Scenario
-    #Given user calls business component "sampleMethod" from location "page1"
     And user switches to page "sample"
     Given user calls business component "sampleMethod" from location "page1"
-    
-    
+
+  @tag2
+  Scenario: Sample Scenario
+    And user switches to page "sample"
+    Given user calls business component "sampleMethod" from location "playwrightTesting"
     
     
     @demotag
