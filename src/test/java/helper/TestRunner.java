@@ -1,4 +1,4 @@
-package stepdefination;
+package helper;
 
 import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
    //path of step definition file
    glue = {"stepdefination"},
    
-   tags ="@tag2" ,
+   tags ="@tag1" ,
    
    plugin = {"pretty"},
    
