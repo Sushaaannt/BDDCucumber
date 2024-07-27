@@ -2,7 +2,7 @@ package modules;
 
 import generic.WebElementHandler;
 
-public class page1 {
+public class Page1 {
 	
 	public void sampleMethod() throws Throwable {
 		System.out.println("Method Worked");

@@ -15,6 +15,7 @@ import org.openqa.selenium.*;
 
 import generic.JsonHandler;
 import io.cucumber.java.en.Given;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class GenericSteps {
 
@@ -96,7 +97,7 @@ public class GenericSteps {
 			}
 		}
 	}
-	@Before
+	//@Before
 	public void preExecution(Scenario scenario){
 		String[] scenarioTags = scenario.getSourceTagNames().toArray(new String[]{});
 		String[] filteredScenarioTags = getFilteredScenarioTags(scenarioTags);
@@ -177,4 +178,12 @@ public class GenericSteps {
 		}
         return filteredScenarioTags;
     }
+
+	@Given("user navigates to <url> using chrome broser")
+	public void userNavigatesToUrlUsingChromeBrowser(String url){
+		System.setProperty("webdriver.chrome.driver",
+				"/Users/sushaaannt/Eclipse/EclipseWorkspace/seleniumbased/drivers/chromedriver");
+		driver = new ChromeDriver();
+		driver.get(url);
+	}
 }

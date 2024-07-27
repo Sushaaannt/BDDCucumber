@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import generic.WebElementHandler;
 
-public class mainClass {
+public class MainClass {
 	
 	WebElement element;
 

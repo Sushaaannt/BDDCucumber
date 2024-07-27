@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
    //path of step definition file
    glue = {"stepdefination"},
    
-   tags ="@tag1" ,
+   tags ="@tag2" ,
    
    plugin = {"pretty"},
    

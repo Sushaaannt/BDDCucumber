@@ -7,17 +7,16 @@ Feature: Title of your feature
 
   @tag2
   Scenario: Sample Scenario
-    And user switches to page "sample"
-    Given user calls business component "sampleMethod" from location "playwrightTesting"
+    //And user switches to page "sample"
+    Given user calls business component "userNavigatesToUrlUsingChromeBrowser" from location "GenericSteps"
     
     
     @demotag
   Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
+
+    Given user navigates to <url> using chrome browser
+
 
     Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+      | url  |
+      | https://www.amazon.in/ |
