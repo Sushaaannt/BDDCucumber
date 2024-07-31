@@ -4,9 +4,8 @@ import org.junit.Test;
 import io.restassured.response.Response;
 import org.testng.*;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.notNullValue;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
 
 public class FirstChapterTests {
