@@ -12,6 +12,11 @@ public class PlaywrightGenericSteps {
     public static BrowserContext browserContext;
     public static Page page = null ;
     static int currentWindowCount;
+    public ElementHandle element = null ;
+    private static Browser browser;
+    double loadStateTime=60000;
+    String waitTime="3";
+
     public static void launchBrowser(){
         String pathToChrome="/Users/sushaaannt/Eclipse/EclipseWorkspace/seleniumbased/drivers/chromedriver";
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -21,8 +26,17 @@ public class PlaywrightGenericSteps {
         env.put("PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD","1");
         Playwright.CreateOptions createOptions=new Playwright.CreateOptions();
         createOptions.setEnv(env);
+        boolean headlessRun = Boolean.parseBoolean(System.getenv("HeadlessRun"));{
+            if(headlessRun){
+                System.out.println("Executing Test cases in headless mode");
+            }
+        }
         Playwright playwright = Playwright.create(createOptions);
-        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setExecutablePath(Paths.get(pathToChrome)).setChromiumSandbox(true));
+        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
+                        .setHeadless(headlessRun).setChannel("chrome")
+               // .setExecutablePath(Paths.get(pathToChrome))
+                .setChromiumSandbox(true));
+
         browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize((int) width,(int) height));
         page = browserContext.newPage();
     }
