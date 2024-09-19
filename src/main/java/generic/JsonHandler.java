@@ -8,6 +8,7 @@ public class JsonHandler {
 
 	public static JsonNode rootPage = null;
 	public static String page = null;
+	private static String application = null;
 	public static String locator = null;
 	public static String value = null;
 	public static String type = null;
@@ -17,6 +18,9 @@ public class JsonHandler {
 
 	public void setApplicationPage(String page) {
 		JsonHandler.page = page;
+	}
+	public void setApplication(String application) {
+		JsonHandler.application = application;
 	}
 
 	public String getApplicationPage() {

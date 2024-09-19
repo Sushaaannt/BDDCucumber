@@ -1,5 +1,6 @@
 package generic;
 
+import io.cucumber.java.Scenario;
 import utilities.FileOperations;
 
 import java.util.Map;
@@ -14,13 +15,14 @@ public class TestdataHandler {
     private static TestdataHandler instance = null;
     public static boolean readMostRecentTagName = false;
     FileOperations fileOperations = null;
-
+    static Scenario scenario;
     public static TestdataHandler getInstance() {
         if (instance == null) {
             instance = new TestdataHandler();
         }
         return instance;
     }
+    public static Scenario getScenario(){return scenario;}
 
     public String getTestData(String columnName) throws Exception {
         String data = null;
@@ -116,4 +118,8 @@ public class TestdataHandler {
     public static void setTestDataRowNumber(int testDataRowNumber) {
         TestdataHandler.testDataRowNumber = testDataRowNumber;
     }
+    public static void setScenario(Scenario scenario1) {
+        scenario = scenario1;
+    }
+
 }
